@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root{
+        --very-ligth-pink: #c7c7c7;
+        --white: #ffffff;
+        --text-input-field: #f7f7f7;
+        --black: #000000;
+        --hospital-green: #acd9b2;
+        --backgaund: ;
+        --sm: 14px;
+        --md: 16px;
+        --lg: 17px;
+        }   
+        body{
+            font-family: 'Quicksand', sans-serif;
+            margin: 15px;
+            background-color: var(--text-input-field);
+        }
+
+        .enviarFormulario{
+            background-color: var(--hospital-green);
+            color: var(--text-input-field);
+            border: none;
+            border-radius: 8px;
+            width: 150px;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+
+        input{
+            font-size: var(--sm);
+            font-weight: bold;
+            border-radius: 8px;
+            margin-bottom: 4px;         
+      
+            border-color: var(--hospital-green); 
+        }
+        label{
+            font-size: var(--sm);
+            
+            margin-bottom: 4px;            
+        }
+
+        section label{
+            display: flex;
+            flex-wrap: wrap;
+
+            flex-basis: 50%;
+           
+
+
+        }
+        .pantallas{
+            font-size: var(--lg);
+            font-weight: bold;
+        }
+
+        #datos_iniciales {
+            display: flex;
+
+        }
+
+        #datos_secundarios{
+            display: flex;
+
+        }
+
+        #nombre{
+            width: 170px;
+            margin: 0 10px 0 0;
+        }
+
+        #celular{
+            width: 90px;
+            margin: 0 10px 0 0;
+        }
+
+        #dia{
+            width: 20px;
+            margin: 0 10px 0 0;
+        }
+
+
+
+    </style>
+
+      
+
+
+</head>
+<body>
+    <form id="formulario" action="https://script.google.com/macros/s/AKfycbwHL6olL7dXYqFff3SrtLwtKo2EdZtilVMPMXyBjVfu264RiaTbnafwmgMhX0C0hqonuw/exec" method="POST">
+    <h1>Control de datos - Pantallas</h1>
+    
+    <section id="datos_cliente">
+        <div id="datos_iniciales">
+            <div class="form-section" id="nombre_cliente">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="entry_nombre">
+            </div>
+            <div class="form-section" id="celular_cliente">
+                <label for="celular">Celular:</label>
+                <input type="tel" id="celular" name="entry_celular">
+            </div>
+            <div class="form-section">
+                <label for="dia">Día:</label>
+                <input type="number" id="dia" name="entry_dia">
+            </div>
+        </div>
+
+
+   
+    </section>   
+
+    <br>
+    <label for="opciones">Selecciona una opción:</label>
+    <select id="opciones" onchange="mostrarSeccion()">
+        <option value="vacio"></option>
+        <option value="datos_disney">Disney</option>
+        <option value="datos_star">Star</option>
+        <option value="datos_hbo">HBO</option>
+        <option value="datos_amazon">Amazon</option>
+        <option value="datos_paramount">Paramount</option>
+        <option value="datos_crunchyroll">Crunchyroll</option>
+        <option value="datos_vix">Vix</option>
+        
+
+    </select>
+    
+    
+    <br>
+    <section id="vacio">
+        <br>
+    </section>
+
+    <section id="datos_disney" class="seccion" style="display: none;">
+        <br>
+        <div class="form-column">
+            <label for="valor">Valor_Disney:</label>
+            <input type="number" id="valor" name="entry_valor_disney">
+        </div>
+        <div class="form-column">
+            <label for="meses-pagos">Meses_pagos_Disney:</label>
+            <input type="number" id="meses-pagos" name="entry_meses_pagos_disney">
+        </div>
+        <div class="form-column">
+            <label for="perfil">Correo_Disney:</label>
+            <input type="text" id="perfil" name="entry_perfil_disney">
+        </div>
+        <div class="form-column">
+            <label for="contraseña">Contraseña_Disney:</label>
+            <input type="text" id="contraseña" name="entry_contraseña_disney">
+        </div>
+        <div class="form-column">
+            <label for="cuenta-asignada">Nro_Perfil_Disney:</label>
+            <input type="text" id="cuenta-asignada" name="entry_cuenta_disney">
+        </div>
+        <div class="form-column">
+            <label for="pin">Pin_Disney:</label>
+            <input type="number" id="pin" name="entry_pin_disney">
+        </div>
+    </section>
+
+
+
+    <section id="datos_star" class="seccion" style="display: none;">
+        <br>
+        <div class="form-column">
+            <label for="valor">Valor_Star:</label>
+            <input type="number" id="valor" name="entry_valor_star">
+        </div>
+        <div class="form-column">
+            <label for="meses-pagos">Meses_pagos_Star:</label>
+            <input type="number" id="meses-pagos" name="entry_meses_pagos_star">
+        </div>
+        <div class="form-column">
+            <label for="cuenta-asignada">Correo_Star:</label>
+            <input type="text" id="cuenta-asignada" name="entry_cuenta_star">
+        </div>
+        <div class="form-column">
+            <label for="contraseña">Contraseña_Star:</label>
+            <input type="number" id="contraseña" name="entry_contraseña_star">
+        </div>
+        <div class="form-column">
+            <label for="perfil">Nro_Perfil_Star:</label>
+            <input type="text" id="perfil" name="entry_perfil_star">
+        </div>
+        <div class="form-column">
+            <label for="pin">Pin_Star:</label>
+            <input type="number" id="pin" name="entry_pin_star">
+        </div>
+    </section>
+
+
+
+    <section id="datos_hbo" class="seccion" style="display: none">
+        <br>
+        <div class="form-column">
+            <label for="valor">Valor_HBO:</label>
+            <input type="number" id="valor" name="entry_valor_hbo">
+        </div>
+        <div class="form-column">
+            <label for="meses-pagos">Meses_Pagos_HBO:</label>
+            <input type="number" id="meses-pagos" name="entry_meses_pagos_hbo">
+        </div>
+        <div class="form-column">
+            <label for="cuenta-asignada">Correo_HBO:</label>
+            <input type="text" id="cuenta-asignada" name="entry_cuenta_hbo">
+        </div>
+        <div class="form-column">
+            <label for="contraseña-asignada">Contraseña_HBO:</label>
+            <input type="text" id="contraseña-asignada" name="entry_contraseña_hbo">
+        </div>
+        <div class="form-column">
+            <label for="perfil">Nro_Perfil_HBO:</label>
+            <input type="text" id="perfil" name="entry_perfil_hbo">
+        </div>
+        <div class="form-column">
+            <label for="pin">Pin_HBO:</label>
+            <input type="number" id="pin" name="entry_pin_hbo">
+        </div>
+    </section>
+
+
+
+    <section id="datos_amazon" class="seccion" style="display: none;">
+        <br>
+        <div class="form-column">
+            <label for="valor">Valor_Amazon:</label>
+            <input type="number" id="valor" name="entry_valor_amazon">
+        </div>
+        <div class="form-column">
+            <label for="meses-pagos">Meses_Pagos_Amazon:</label>
+            <input type="number" id="meses-pagos" name="entry_meses_pagos_amazon">
+        </div>
+        <div class="form-column">
+            <label for="cuenta-asignada">Correo_Amazon:</label>
+            <input type="text" id="cuenta-asignada" name="entry_cuenta_amazon">
+        </div>
+        <div class="form-column">
+            <label for="contraseña-asignada">Contraseña_Amazon:</label>
+            <input type="text" id="contraseña-asignada" name="entry_contraseña_amazon">
+        </div>
+
+        <div class="form-column">
+            <label for="perfil">Nro_Perfil_Amazon:</label>
+            <input type="text" id="perfil" name="entry_perfil_amazon">
+        </div>
+        <div class="form-column">
+            <label for="pin">Pin_Amazon:</label>
+            <input type="number" id="pin" name="entry_pin_amazon">
+        </div>
+    </section>
+
+
+
+    <section id="datos_paramount" class="seccion" style="display: none;">
+        <br>
+        <div class="form-column">
+            <label for="valor">Valor_Paramount:</label>
+            <input type="number" id="valor" name="entry_valor_paramount">
+        </div>
+        <div class="form-column">
+            <label for="meses-pagos">Meses_Pagos_Paramount:</label>
+            <input type="number" id="meses-pagos" name="entry_meses_pagos_paramount">
+        </div>
+        <div class="form-column">
+            <label for="cuenta-asignada">Correo_Paramount:</label>
+            <input type="text" id="cuenta-asignada" name="entry_cuenta_paramount">
+        </div>
+        <div class="form-column">
+            <label for="contraseña-asignada">Contraseña_Paramount:</label>
+            <input type="text" id="contraseña-asignada" name="entry_contraseña_paramount">
+        </div>
+        <div class="form-column">
+            <label for="perfil">Nro_Perfil_Paramount:</label>
+            <input type="text" id="perfil" name="entry_perfil_paramount">
+        </div>
+        <div class="form-column">
+            <label for="pin">Pin_Paramount:</label>
+            <input type="number" id="pin" name="entry_pin_paramount">
+        </div>
+    </section>
+
+
+
+    <section id="datos_crunchyroll" class="seccion" style="display: none;">
+        <br>
+        <div class="form-column">
+            <label for="valor">Valor_Crunchyroll:</label>
+            <input type="number" id="valor" name="entry_valor_crunchyroll">
+        </div>
+        <div class="form-column">
+            <label for="meses-pagos">Meses_Pagos_Crunchyroll:</label>
+            <input type="number" id="meses-pagos" name="entry_meses_pagos_crunchyroll">
+        </div>
+        <div class="form-column">
+            <label for="cuenta-asignada">Correo_Crunchyroll:</label>
+            <input type="text" id="cuenta-asignada" name="entry_cuenta_crunchyroll">
+        </div>
+        <div class="form-column">
+            <label for="contraseña-asignada">Contraseña_Crunchyroll:</label>
+            <input type="text" id="contraseña-asignada" name="entry_contraseña_crunchyroll">
+        </div>
+        <div class="form-column">
+            <label for="perfil">Nro_Perfil_Crunchyroll:</label>
+            <input type="text" id="perfil" name="entry_perfil_crunchyroll">
+        </div>
+        <div class="form-column">
+            <label for="pin">Pin_Crunchyroll:</label>
+            <input type="number" id="pin" name="entry_pin_crunchyroll">
+        </div>
+    </section>
+
+
+
+    <section id="datos_vix" class="seccion" style="display: none;"> 
+        <br>
+        <div class="form-column">
+            <label for="valor">Valor_VIX:</label>
+            <input type="number" id="valor" name="entry_valor_vix">
+        </div>
+        <div class="form-column">
+            <label for="meses-pagos">Meses_Pagos_VIX:</label>
+            <input type="number" id="meses-pagos" name="entry_meses_pagos_vix">
+        </div>
+        <div class="form-column">
+            <label for="cuenta-asignada">Correo_VIX:</label>
+            <input type="text" id="cuenta-asignada" name="entry_cuenta_vix">
+        </div>
+        <div class="form-column">
+            <label for="contraseña-asignada">Contraseña_VIX:</label>
+            <input type="text" id="contraseña-asignada" name="entry_contraseña_vix">
+        </div>
+        <div class="form-column">
+            <label for="perfil">Nro_Perfil_VIX:</label>
+            <input type="text" id="perfil" name="entry_perfil_vix">
+        </div>
+        <div class="form-column">
+            <label for="pin">Pin_VIX:</label>
+            <input type="number" id="pin" name="entry_pin_vix">
+        </div>
+    </section>
+
+
+
+    <section id="datos_netflix" class="seccion" style="display: none;">
+        <br>
+        <div class="form-column">
+            <label for="valor">Valor_Netflix:</label>
+            <input type="number" id="valor" name="entry_valor_netflix">
+        </div>
+        <div class="form-column">
+            <label for="meses-pagos">Meses_pagos_Netflix:</label>
+            <input type="number" id="meses-pagos" name="entry_meses_pagos_netflix">
+        </div>
+        <div class="form-column">
+            <label for="cuenta-asignada">correo_Netflix:</label>
+            <input type="text" id="cuenta-asignada" name="entry_cuenta_netflix">
+        </div>
+        <div class="form-column">
+            <label for="contraseña-asignada">Contraseña_Netflix:</label>
+            <input type="text" id="contraseña-asignada" name="entry_contraseña_netflix">
+        </div>
+        <div class="form-column">
+            <label for="perfil">Nro_Perfil_Netflix:</label>
+            <input type="text" id="perfil" name="entry_perfil_netflix">
+        </div>
+        <div class="form-column">
+            <label for="pin">Pin_Netflix:</label>
+            <input type="number" id="pin" name="entry_pin_netflix">
+        </div>
+    </section>
+        <br>
+        <div class="form-section form-submit" id="enviar">
+            <input class="enviarFormulario" type="submit" value="Enviar">
+        </div>
+        <br>
+        <div id="mensaje"></div>
+
+
+    </form>
+
+    <script>
+        // Función para enviar el formulario y mostrar el mensaje
+        function enviarFormulario() {
+          var formulario = document.getElementById('formulario');
+          var mensaje = document.getElementById('mensaje');
+          mensaje.textContent = 'Enviando formulario...';
+      
+          // Envía el formulario mediante una petición AJAX
+          var xhr = new XMLHttpRequest();
+          xhr.open(formulario.method, formulario.action, true);
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+              mensaje.textContent = 'Formulario enviado exitosamente';
+              formulario.reset();
+            } else {
+              mensaje.textContent = 'Ha ocurrido un error. Inténtalo de nuevo más tarde.';
+            }
+          };
+          xhr.send(new FormData(formulario));
+
+          inciiarapp()
+        }
+      
+        // Agrega un evento de escucha al formulario para enviarlo
+        var formulario = document.getElementById('formulario');
+        formulario.addEventListener('submit', function(e) {
+          e.preventDefault(); // Evita el envío del formulario por defecto
+          enviarFormulario(); // Llama a la función para enviar el formulario
+          
+        });
+
+
+
+        function inciiarapp(){
+            
+
+
+            let star = document.getElementById('datos_star');
+            star.style.display = 'none';
+
+            let hbo = document.getElementById('datos_hbo');
+            hbo.style.display = 'none';
+
+            let amazon = document.getElementById('datos_amazon');
+            amazon.style.display = 'none';
+
+            let paramount = document.getElementById('datos_paramount');
+            paramount.style.display = 'none';
+
+            let crunchyroll = document.getElementById('datos_crunchyroll');
+            crunchyroll.style.display = 'none';
+
+            let vix = document.getElementById('datos_vix');
+            vix.style.display = 'none';
+
+            let netflix = document.getElementById('datos_netflix');
+            netflix.style.display = 'none';
+
+
+
+
+
+
+
+        }
+
+        function mostrarSeccion() {
+            var seleccion = document.getElementById("opciones").value;
+            var secciones = document.getElementsByClassName("seccion");
+            
+            // Ocultar todas las secciones
+            for (var i = 0; i < secciones.length; i++) {
+                secciones[i].style.display = "none";
+            }
+            
+            // Mostrar la sección seleccionada
+            document.getElementById(seleccion).style.display = "block";
+        }
+
+
+        function mostrarStar() {
+            let starCheckbox = document.getElementById('star');
+            let muestraStar = document.getElementById('datos_star');
+
+            if (starCheckbox.checked) {
+                muestraStar.style.display = 'block';
+            } else {
+                muestraStar.style.display = 'none';
+            }
+        }
+
+        function mostrarHbo() {
+            let hboCheckbox = document.getElementById('hbo');
+            let muestraHbo = document.getElementById('datos_hbo');
+
+            if (hboCheckbox.checked) {
+                muestraHbo.style.display = 'block';
+            } else {
+                muestraHbo.style.display = 'none';
+            }
+        }
+
+        function mostrarAmazon() {
+            let amazonCheckbox = document.getElementById('amazon');
+            let muestraAmazon = document.getElementById('datos_amazon');
+
+            if (amazonCheckbox.checked) {
+                muestraAmazon.style.display = 'block';
+            } else {
+                muestraAmazon.style.display = 'none';
+            }
+        }
+
+        function mostrarParamount() {
+            let paramountCheckbox = document.getElementById('paramount');
+            let muestraParamount = document.getElementById('datos_paramount');
+
+            if (paramountCheckbox.checked) {
+                muestraParamount.style.display = 'block';
+            } else {
+                muestraParamount.style.display = 'none';
+            }
+        }
+
+        function mostrarCrunchyroll() {
+            let crunchyrollCheckbox = document.getElementById('crunchyroll');
+            let muestraCrunchyroll = document.getElementById('datos_crunchyroll');
+
+            if (crunchyrollCheckbox.checked) {
+                muestraCrunchyroll.style.display = 'block';
+            } else {
+                muestraCrunchyroll.style.display = 'none';
+            }
+        }
+
+        function mostrarVix() {
+            let vixCheckbox = document.getElementById('vix');
+            let muestraVix = document.getElementById('datos_vix');
+
+            if (vixCheckbox.checked) {
+                muestraVix.style.display = 'block';
+            } else {
+                muestraVix.style.display = 'none';
+            }
+        }
+
+            function mostrarNetflix() {
+            let netflixCheckbox = document.getElementById('netflix');
+            let muestraNetflix = document.getElementById('datos_netflix');
+
+            if (netflixCheckbox.checked) {
+                muestraNetflix.style.display = 'block';
+            } else {
+                muestraNetflix.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('load', inciiarapp)
+        
+      </script>
+</body>
+</html>
